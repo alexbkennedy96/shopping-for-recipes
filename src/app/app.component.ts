@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'shopping-for-recipes';
+  pageDisplayed = 'recipes';
+
+  onDisplayPage(page: string) {
+    this.pageDisplayed = page;
+  }
 }

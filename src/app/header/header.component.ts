@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  @Output() pageToDisplay = new EventEmitter<string>();
   collapsed = true;
 
   constructor() { }
@@ -14,4 +14,12 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  onRecipesClicked() {
+    this.pageToDisplay.emit('recipes');
+  }
+
+
+  onListClicked() {
+    this.pageToDisplay.emit('lists');
+  }
 }
