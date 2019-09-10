@@ -10,8 +10,7 @@
   <div class="col-xs-12">
     <app-recipe-item
       *ngFor="let recipeParent of recipes"
-      [recipe]="recipeParent "
-      (recipeSelected)="onRecipeSelected($event)">
+      [recipe]="recipeParent ">
     </app-recipe-item>
   </div>
 </div>
